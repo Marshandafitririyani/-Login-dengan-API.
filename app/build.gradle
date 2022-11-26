@@ -20,10 +20,17 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
         release {
+            manifestPlaceholders = [usesCleartextTraffic: false, crashlyticsEnableed: true, performanceEnabled: true]
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            manifestPlaceholders = [usesCleartextTraffic: true, crashlyticsEnableed: false, performanceEnabled: false]
+
         }
     }
     compileOptions {
@@ -44,9 +51,6 @@ dependencies {
     implementation 'com.github.crocodic-studio:AndroidCoreProject:4.0.7'
 
     implementation 'com.google.dagger:hilt-android:2.44'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     kapt 'com.google.dagger:hilt-compiler:2.44'
 
     implementation 'androidx.room:room-ktx:2.4.3'

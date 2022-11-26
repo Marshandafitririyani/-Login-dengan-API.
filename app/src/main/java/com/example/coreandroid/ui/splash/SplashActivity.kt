@@ -6,6 +6,7 @@ import com.crocodic.core.extension.openActivity
 import com.example.coreandroid.R
 import com.example.coreandroid.base.activity.BaseActivity
 import com.example.coreandroid.databinding.ActivitySplashBinding
+import com.example.coreandroid.ui.home.HomeActivity
 import com.example.coreandroid.ui.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -14,7 +15,11 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(R.la
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.splash {
-            openActivity<LoginActivity>()
+            if (it) {
+                openActivity<HomeActivity>()
+            } else {
+                openActivity<LoginActivity>()
+            }
             finish()
         }
     }
