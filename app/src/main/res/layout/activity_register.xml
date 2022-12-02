@@ -7,49 +7,45 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context=".ui.login.LoginActivity">
+        tools:context=".ui.register.RegisterActivity">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome to MyFriend"
+            android:text="hello,who are you"
             android:textSize="20dp"/>
 
         <EditText
-            android:id="@+id/et_phone"
-            android:layout_marginTop="24dp"
+            android:id="@+id/et_Name"
+            android:hint="Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            />
+
+        <EditText
+            android:id="@+id/et_phone"
             android:hint="Phone"
-            android:inputType="phone" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            />
 
         <EditText
             android:id="@+id/et_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            />
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:text="Register" />
 
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:text="don't have an account, Sign in now"/>
-
-        <Button
-            android:layout_marginTop="10dp"
-            android:id="@+id/btn_sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sign In"/>
 
     </LinearLayout>
 </layout>

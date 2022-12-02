@@ -12,4 +12,12 @@ interface ApiService {
         @Field("phone") phone: String?,
         @Field("password") password: String?
     ): String
+
+    @FormUrlEncoded
+    @POST("mfriend_register")
+    suspend fun register(
+        @Field("phone") phone: String?,
+        @Field("password") password: String?,
+        @Field("name") name: String?
+    ) : String
 }
