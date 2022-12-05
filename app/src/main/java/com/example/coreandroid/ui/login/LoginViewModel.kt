@@ -5,9 +5,11 @@ import com.crocodic.core.api.ApiCode
 import com.crocodic.core.api.ApiObserver
 import com.crocodic.core.api.ApiResponse
 import com.crocodic.core.api.ApiStatus
+import com.crocodic.core.data.CoreSession
 import com.crocodic.core.extension.toObject
 import com.example.coreandroid.api.ApiService
 import com.example.coreandroid.base.viewmodel.BaseViewModel
+import com.example.coreandroid.data.constant.Const
 import com.example.coreandroid.data.room.user.User
 import com.example.coreandroid.data.room.user.UserDao
 import com.google.gson.Gson
@@ -17,7 +19,7 @@ import org.json.JSONObject
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val apiService: ApiService, private val gson: Gson, private val userDao: UserDao): BaseViewModel(){
+class LoginViewModel @Inject constructor(private val apiService: ApiService, private val gson: Gson, private val userDao: UserDao, private val session: CoreSession): BaseViewModel(){
     fun login(phone: String, password: String) = viewModelScope.launch {
         _apiResponse.send(ApiResponse().responseLoading())
         ApiObserver({apiService.login(phone, password)}, false, object : ApiObserver.ResponseListener{
@@ -25,6 +27,8 @@ class LoginViewModel @Inject constructor(private val apiService: ApiService, pri
                 val status = response.getInt(ApiCode.STATUS)
                 if (status == ApiCode.SUCCESS){
                     val data = response.getJSONObject(ApiCode.DATA).toObject<User>(gson)
+                    phone?.let { session.setValue(Const.PHONE,it)}
+                    password?.let { session.setValue(Const.PASSWORD,it) }
                     userDao.insert(data.copy(idRoom = 1))
                     _apiResponse.send(ApiResponse().responseSuccess())
                 }else {

@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+    <data>
+        <variable
+            name="enableBiometric"
+            type="Boolean"/>
+
+        <variable
+            name="hasBiometric"
+            type="Boolean" />
+
+        <import type="android.view.View"/>
+    </data>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -46,10 +58,12 @@
 
         <Button
             android:layout_marginTop="10dp"
-            android:id="@+id/btn_sign_up"
+            android:id="@+id/btn_sign_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign In"/>
+            android:onClick="onClick"
+            android:text="Sign In"
+            android:visibility='@{hasBiometric ? View.VISIBLE : View.GONE}'/>
 
     </LinearLayout>
 </layout>

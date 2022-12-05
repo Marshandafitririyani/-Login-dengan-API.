@@ -1,8 +1,9 @@
 package com.example.coreandroid.injection
 
 import android.content.Context
+import com.crocodic.core.BuildConfig
 import com.crocodic.core.helper.okhttp.SSLTrust
-import com.example.coreandroid.BuildConfig
+//import com.example.coreandroid.BuildConfig
 import com.example.coreandroid.api.ApiService
 import com.example.coreandroid.data.room.AppDatabase
 import com.google.gson.FieldNamingPolicy

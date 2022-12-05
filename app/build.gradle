@@ -8,12 +8,13 @@ plugins {
 }
 
 android {
+    namespace 'com.exsample.loginapi'
     compileSdk 33
 
     defaultConfig {
         applicationId "com.example.coreandroid"
         minSdk 23
-        targetSdk 33
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -55,6 +56,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     kapt 'com.google.dagger:hilt-compiler:2.44'
+
+    implementation 'androidx.biometric:biometric:1.1.0'
 
     implementation 'androidx.room:room-ktx:2.4.3'
     kapt 'androidx.room:room-compiler:2.4.3'
