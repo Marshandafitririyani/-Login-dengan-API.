@@ -13,12 +13,14 @@ import com.crocodic.core.extension.isEmptyRequired
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.textOf
 import com.crocodic.core.extension.tos
-import com.example.coreandroid.R
+//import com.example.coreandroid.R
 import com.example.coreandroid.base.activity.BaseActivity
 import com.example.coreandroid.data.constant.Const
 //import com.example.coreandroid.data.constant.Const.LOGIN.PHONE
-import com.example.coreandroid.databinding.ActivityLoginBinding
+//import com.example.coreandroid.databinding.ActivityLoginBinding
 import com.example.coreandroid.ui.home.HomeActivity
+import com.exsample.loginapi.R
+import com.exsample.loginapi.databinding.ActivityLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -2,6 +2,7 @@ package com.example.coreandroid.injection
 
 import android.content.Context
 import com.crocodic.core.BuildConfig
+import com.crocodic.core.data.CoreSession
 import com.crocodic.core.helper.okhttp.SSLTrust
 //import com.example.coreandroid.BuildConfig
 import com.example.coreandroid.api.ApiService
@@ -31,6 +32,9 @@ class DataModule {
 
     @Provides
     fun provideGson() = GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create()
+
+    @Provides
+    fun provideSession(@ApplicationContext context: Context) = CoreSession(context)
 
     @Provides
     fun provideOkHttpClient(): OkHttpClient {
