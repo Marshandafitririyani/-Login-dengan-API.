@@ -9,8 +9,8 @@ import com.example.coreandroid.data.room.user.UserDao
 //import com.example.coreandroid.databinding.ActivityHomeBinding
 import com.example.coreandroid.ui.Setting.SettingActivity
 import com.example.coreandroid.ui.login.LoginActivity
-import com.exsample.loginapi.R
-import com.exsample.loginapi.databinding.ActivityHomeBinding
+import com.example.coreandroid.R
+import com.example.coreandroid.databinding.ActivityHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -30,6 +30,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
         binding.btnLogout.setOnClickListener {
             viewModel.logout {
                 openActivity<LoginActivity>()
+                finish()
+            }
+        }
+
+        binding.btnSetting.setOnClickListener {
+            openActivity<SettingActivity> () {
                 finish()
             }
         }

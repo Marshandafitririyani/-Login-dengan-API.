@@ -21,14 +21,7 @@
     android:padding="24dp"
     tools:context=".ui.home.HomeActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/btn_setting"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/purple_700"
-        app:navigationIcon="@drawable/ic_back"
-        app:title="Setting"
-        app:titleTextColor="@color/white"/>
+
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/btn_biometric"

@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace 'com.exsample.loginapi'
+    namespace 'com.example.coreandroid'
     compileSdk 33
 
     defaultConfig {

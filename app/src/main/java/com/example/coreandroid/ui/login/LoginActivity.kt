@@ -19,8 +19,9 @@ import com.example.coreandroid.data.constant.Const
 //import com.example.coreandroid.data.constant.Const.LOGIN.PHONE
 //import com.example.coreandroid.databinding.ActivityLoginBinding
 import com.example.coreandroid.ui.home.HomeActivity
-import com.exsample.loginapi.R
-import com.exsample.loginapi.databinding.ActivityLoginBinding
+import com.example.coreandroid.R
+import com.example.coreandroid.databinding.ActivityLoginBinding
+import com.example.coreandroid.ui.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -42,6 +43,15 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             val password = binding.etPassword.textOf()
 
             viewModel.login(phone, password)
+        }
+        binding.btnSignIn.setOnClickListener {
+            openActivity<RegisterActivity> {
+                finish()
+            }
+        }
+
+        binding.loginWithBiometric.setOnClickListener {
+            showBiometricPrompt()
         }
 
         lifecycleScope.launch{

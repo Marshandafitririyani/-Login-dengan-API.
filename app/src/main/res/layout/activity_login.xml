@@ -48,6 +48,12 @@
             android:layout_height="wrap_content"
             android:text="Login" />
 
+        <Button
+            android:id="@+id/login_with_biometric"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login with biometric" />
+
         <TextView
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
@@ -62,8 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onClick"
-            android:text="Sign In"
-            android:visibility='@{hasBiometric ? View.VISIBLE : View.GONE}'/>
+            android:text="Sign In"/>
 
     </LinearLayout>
 </layout>

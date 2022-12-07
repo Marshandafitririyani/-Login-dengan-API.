@@ -23,12 +23,20 @@
             android:text='@{"Halo, selamat datang " + user.name}'
             tools:text="Halo, selamat datang Daniel" />
 
+
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Logout" />
+
+        <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Seting" />
 
     </LinearLayout>
 </layout>

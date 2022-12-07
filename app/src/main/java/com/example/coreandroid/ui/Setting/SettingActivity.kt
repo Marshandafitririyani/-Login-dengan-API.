@@ -12,8 +12,8 @@ import com.example.coreandroid.base.activity.BaseActivity
 import com.example.coreandroid.data.constant.Const
 //import com.example.coreandroid.databinding.ActivitySettingBinding
 import com.example.coreandroid.ui.login.LoginActivity
-import com.exsample.loginapi.R
-import com.exsample.loginapi.databinding.ActivitySettingBinding
+import com.example.coreandroid.R
+import com.example.coreandroid.databinding.ActivitySettingBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
