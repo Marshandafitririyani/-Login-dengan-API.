@@ -3,4 +3,20 @@
     <string name="label_must_fill">Wajib diisi.</string>
     <string name="support_biometric">Support Biometric</string>
     <string name="tidak_support_biometric">Maaf smarphone anda tidak bisa menggunkan mode biometric</string>
+
+    <string-array name="school">
+        <item>SMK Negeri 11 Semarang</item>
+        <item>SMK Negeri 3 Kendal</item>
+        <item>SMK Wikrama Jepara</item>
+    </string-array>
+
+    <string-array name="filter_school">
+        <item>semua</item>
+        <item>SMK Negeri 11 Semarang</item>
+        <item>SMK Negeri 3 Kendal</item>
+        <item>SMK Wikrama Jepara</item>
+    </string-array>
+
+
 </resources>
+

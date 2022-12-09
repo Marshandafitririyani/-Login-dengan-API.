@@ -35,9 +35,9 @@ class HomeViewModel @Inject constructor(private val apiService: ApiService, priv
         logout()
     }
 
-    fun getFriends(search: String? =null) = viewModelScope.launch {
+    fun getFriends(search: String? =null, filter: String?) = viewModelScope.launch {
         val idUser = userDao.userLogin().id
-        ApiObserver({ apiService.getFriends(idUser, search)},false, object : ApiObserver.ResponseListener{
+        ApiObserver({ apiService.getFriends(idUser, search, filter)},false, object : ApiObserver.ResponseListener{
             override suspend fun onSuccess(response: JSONObject) {
                 val status = response.getInt(ApiCode.STATUS)
                 if (status == ApiCode.SUCCESS){
