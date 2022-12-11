@@ -18,4 +18,5 @@ interface UserDao: CoreDao<User> {
 
     @Query("SELECT * FROM User Where idRoom = 1")
     suspend fun userLogin(): User
+
 }

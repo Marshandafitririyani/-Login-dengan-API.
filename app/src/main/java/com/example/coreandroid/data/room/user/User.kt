@@ -26,5 +26,4 @@ data class User(
     @Expose
     @SerializedName("Likes")
     val likes: Int?
-
     )
