@@ -11,13 +11,17 @@ import com.crocodic.core.api.DataObserver
 import com.crocodic.core.base.adapter.CoreListAdapter
 import com.crocodic.core.base.adapter.CoreListAdapter.Companion.get
 import com.crocodic.core.extension.initLoadMore
+import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
 import com.crocodic.core.helper.list.EndlessScrollListener
 import com.example.coreandroid.R
 import com.example.coreandroid.base.activity.BaseActivity
+import com.example.coreandroid.data.constant.Const
 import com.example.coreandroid.data.model.Article
+//import com.example.coreandroid.data.room.Const
 import com.example.coreandroid.databinding.ActivityArticleBinding
 import com.example.coreandroid.databinding.ItemArticleBinding
+import com.example.coreandroid.ui.detail.ArticleDetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -33,6 +37,11 @@ class ArticleActivity : BaseActivity<ActivityArticleBinding,ArticleViewModel> (R
         binding.rvArticle.adapter = CoreListAdapter<ItemArticleBinding,Article>(R.layout.item_article)
             .initItem(article) { position, data ->
                 tos(data?.title ?: return@initItem)
+
+                openActivity<ArticleDetailActivity>{
+                    putExtra(Const.BUNDLE.ARTICLE, data)
+                }
+
             }
 
         scrollListener = binding.rvArticle.initLoadMore { page ->

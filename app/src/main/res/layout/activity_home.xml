@@ -80,7 +80,6 @@
              android:text="Urutkan Dari List Terbanyak"/>
 
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_Friend"
             android:layout_marginTop="10dp"
