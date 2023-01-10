@@ -101,7 +101,7 @@ class ArticleActivity : BaseActivity<ActivityArticleBinding,ArticleViewModel> (R
     private fun iniSlider(data:List<Article>){
         val imageList = ArrayList<SlideModel>()
         data.forEach{
-            imageList.add(SlideModel(it.image))
+            imageList.add(SlideModel(it.image,it.title))
         }
         binding.idImageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP)
     }

@@ -45,7 +45,7 @@ data class Article (
                 .with(imageView.context)
                 .load(image)
                 .placeholder(R.drawable.loading_image)
-                .error(R.drawable.try_later)
+                .error(R.drawable.errornotfound)
                 .thumbnail(thumbnail)
                 .apply(RequestOptions.centerCropTransform())
                 .into(imageView)
@@ -53,7 +53,7 @@ data class Article (
             Picasso.get()
                 .load(image)
                 .placeholder(R.drawable.loading_image)
-                .error(R.drawable.try_later)
+                .error(R.drawable.errornotfound)
                 .into(imageView)
         }
     }
